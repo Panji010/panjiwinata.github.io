@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Panjiwinata Ompusunggu</title>
+  <style>
+    /* ======== STYLE DASAR ======== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #111;
+      line-height: 1.7;
+    }
+
+    /* ======== HEADER ======== */
+    header {
+      background: linear-gradient(90deg, #0078ff, #5f9eff);
+      color: #fff;
+      padding: 1.2rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h3 {
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    /* ======== HOME ======== */
+    #home {
+      text-align: center;
+      padding: 6rem 1rem 5rem;
+      background: linear-gradient(180deg, #f0f7ff, #ffffff);
+    }
+
+    #home h2 {
+      font-size: 2.4rem;
+      color: #0a192f;
+    }
+
+    #home p {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #444;
+      text-align: justify;
+    }
+
+    #home button {
+      margin-top: 25px;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      background: linear-gradient(90deg, #007bff, #0056d2);
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #home button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,120,255,0.3);
+    }
+
+    /* ======== SECTION UMUM ======== */
+    section {
+      padding: 5rem 2rem;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #0a192f;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #0078ff, #5f9eff);
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* ======== ABOUT ======== */
+    .about p {
+      text-align: justify;
+      color: #444;
+      font-size: 1.05rem;
+      max-width: 780px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    /* ======== SKILLS ======== */
+    .skills p {
+      text-align: justify;
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* ======== PROJECTS ======== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+    }
+
+    .project img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3; /* agar proporsional seperti foto aslimu */
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .project h3 {
+      color: #0a192f;
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* ======== CONTACT ======== */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: #444;
+    }
+
+    .contact a {
+      color: #0078ff;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0.7rem;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .contact a:hover {
+      color: #005fcc;
+    }
+
+    /* ======== FOOTER ======== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+      background: #f0f5ff;
+      margin-top: 2rem;
+    }
+
+    /* ======== ANIMASI ======== */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+
+    [data-animate].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 600px) {
+      #home h2 {
+        font-size: 2rem;
+      }
+      .project img {
+        aspect-ratio: 16 / 10;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h3>Panji</h3>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#projects">Proyek</a>
+        <a href="#contact">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ======== HOME ======== -->
+  <section id="home" data-animate>
+    <h2>Halo, Saya Panjiwinata Ompusunggu</h2>
+    <p>
+      Mahasiswa Teknologi Komputer yang antusias di bidang <b>Front-End Development</b>, 
+      <b>Internet of Things (IoT)</b>, dan <b>System Analyst</b>. 
+      Berfokus pada pengembangan sistem digital yang efisien, interaktif, dan terintegrasi.
+    </p>
+    <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Lihat Proyek</button>
+  </section>
+
+  <!-- ======== ABOUT ======== -->
+  <section id="about" class="about" data-animate>
+    <h2>Tentang Saya</h2>
+    <p>
+      Saya adalah Mahasiswa D3 Teknologi Komputer di Institut Teknologi Del dengan minat kuat pada bidang analisis sistem dan pengembangan perangkat lunak.  
+      Terampil dalam menganalisis kebutuhan pengguna, merancang diagram sistem, serta membuat dokumentasi teknis yang terstruktur.  
+      Berpengalaman menggunakan alat bantu seperti UML, ERD, dan Draw.io untuk memvisualisasikan rancangan sistem.  
+      Siap belajar, beradaptasi, dan berkontribusi sebagai <strong>System Analyst Intern</strong> dalam mengembangkan solusi digital yang efisien dan inovatif.
+    </p>
+  </section>
+
+  <!-- ======== SKILLS ======== -->
+  <section id="skills" class="skills" data-animate>
+    <h2>Keahlian</h2>
+    <p><strong>Keahlian Teknis:</strong> Terampil dalam analisis kebutuhan sistem, perancangan UML dan DFD, pemodelan basis data (MySQL, PostgreSQL), dan pembuatan dokumentasi teknis.  
+    Mahir menggunakan Draw.io dan Visio untuk visualisasi sistem, serta memiliki pengetahuan dasar pemrograman dalam Java, PHP, dan Python.</p>
+    <br>
+    <p><strong>Keahlian Non-Teknis:</strong> Memiliki kemampuan komunikasi dan kerja tim yang baik, teliti, serta terampil dalam pemecahan masalah.  
+    Cepat beradaptasi dan belajar hal baru dalam lingkungan yang dinamis.</p>
+  </section>
+
+  <!-- ======== PROJECTS ======== -->
+  <section id="projects" data-animate>
+    <h2>Proyek</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="Sistem Parkir Otomatis.jpg" alt="Sistem Parkir Otomatis">
+        <h3>Sistem Parkir Otomatis (2024)</h3>
+        <p>Miniatur sistem parkir otomatis berbasis ESP32 dengan sensor IR dan LCD untuk mendeteksi kendaraan serta menampilkan status slot parkir.</p>
+      </div>
+
+      <div class="project">
+        <img src="Website Civitas IT Del.jpg" alt="Website Civitas IT Del">
+        <h3>Website Civitas IT Del (2024)</h3>
+        <p>Website Civitas IT Del merupakan platform berbasis web yang dirancang untuk mempermudah akses informasi seputar civitas akademika di Institut Teknologi Del. Website ini menampilkan data dosen, staf, dan mahasiswa dengan antarmuka yang interaktif dan mudah digunakan.</p>
+      </div>
+
+       <div class="project">
+        <img src="Alat Pemantau Kesehatan Non-Invasif (2025).jpg" alt="Alat Pemantau Kesehatan Non-Invasif (2025)">
+        <h3>Alat Pemantau Kesehatan Non-Invasif (2025)</h3>
+        <p>Merancang dan mengimplementasikan alat pemantau kesehatan non-invasif menggunakan ESP32 dan sensor inframerah untuk mengukur kadar kolesterol, asam urat, dan gula darah. Data hasil pengukuran ditampilkan pada LCD dan dapat dipantau melalui dashboard mobile.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTACT ======== -->
+  <section id="contact" class="contact" data-animate>
+    <h2>Kontak</h2>
+    <p>Hubungi saya melalui:</p>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=panjiops@gmail.com" target="_blank">📧 Email</a>
+    <a href="http://www.linkedin.com/in/panjiwinata-ompusunggu-2546752b9">💼 LinkedIn</a>
+    <a href="https://github.com/Panji010">💻 GitHub</a>
+  </section>
+
+  <footer>
+    © 2025 Panjiwinata Ompusunggu.
+  </footer>
+
+  <script>
+    // ======== ANIMASI SCROLL ========
+    const elements = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
